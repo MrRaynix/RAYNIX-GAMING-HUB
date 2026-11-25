@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080a12"><title>Play Game — Raynix Gaming Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .player-wrap{max-width:1100px;margin:45px auto;padding:0 20px}.player-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:20px}.player-top h1{font:700 clamp(22px,4vw,34px) Orbitron;margin:5px 0}.back-link{color:#82b9ff;font-size:12px}.game-stage{background:#101522;border:1px solid #ffffff18;border-radius:16px;padding:20px;min-height:420px;display:grid;place-items:center}.game-stage canvas{display:block;max-width:100%;background:#080d19;border-radius:10px;touch-action:none}.game-ui{text-align:center;max-width:700px;width:100%}.game-ui h2{font:700 25px Orbitron}.game-ui p{color:#aab4c8;line-height:1.6;font-size:13px}.game-button{border:0;border-radius:8px;background:linear-gradient(100deg,#397de0,#8054df);color:white;padding:12px 20px;font:700 11px Orbitron;cursor:pointer;margin:5px}.game-button.secondary{background:#252e43}.score-line{font:700 13px Orbitron;color:#f2c66d;margin:10px}.board{display:grid;grid-template-columns:repeat(4,70px);gap:8px;justify-content:center;margin:20px auto}.memory-card{height:70px;border:1px solid #526d9d;background:#1b2942;color:white;border-radius:9px;font-size:24px;cursor:pointer}.ttt-board{display:grid;grid-template-columns:repeat(3,85px);gap:8px;justify-content:center;margin:20px auto}.ttt-cell{height:85px;background:#202b40;border:1px solid #526d9d;border-radius:9px;color:#fff;font-size:35px;cursor:pointer}.instructions{font-size:12px;color:#aab4c8}.mobile-controls{display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap}.mobile-controls button{padding:12px 18px;background:#263b61;border:1px solid #5876a7;color:white;border-radius:8px}
+    @media(max-width:600px){.game-stage{padding:10px;min-height:370px}.board{grid-template-columns:repeat(4,58px)}.memory-card{height:58px}.ttt-board{grid-template-columns:repeat(3,75px)}.ttt-cell{height:75px}}
+  </style>
+  <script defer src="games.js"></script><script defer src="player.js"></script>
+</head>
+<body>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">R</span><span>RAYNIX<span class="brand-light"> GAMING</span><small>HUB</small></span></a><a class="back-link" href="index.html">← BACK TO HUB</a></header>
+<main class="player-wrap">
+  <div class="player-top"><div><div class="eyebrow">NOW PLAYING</div><h1 id="gameTitle">Loading game…</h1><div id="gameDescription" class="muted"></div></div><button class="game-button secondary" id="fullscreenBtn">FULLSCREEN ⛶</button></div>
+  <section class="game-stage" id="gameStage"><div class="game-ui"><h2>Loading…</h2><p>Please wait.</p></div></section>
+  <p class="instructions" id="gameInstructions">Game controls will appear here.</p>
+</main>
+</body>
+</html>

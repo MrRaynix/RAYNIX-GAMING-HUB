@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080a12">
+<title>MR RAYNIX — 3D Arena</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#070910;color:#f5f7ff;font-family:Inter,Arial,sans-serif;min-height:100vh}.top{height:65px;padding:0 22px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff18;background:#0d111d}.brand{font:800 14px Orbitron;letter-spacing:1px}.brand b{color:#e9bd64}.top a{color:#83baff;text-decoration:none;font-size:12px}.wrap{max-width:1200px;margin:25px auto;padding:0 16px}.heading{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:15px}.heading h1{font:800 clamp(24px,5vw,42px) Orbitron;margin:4px 0}.eyebrow{font:700 9px Orbitron;letter-spacing:2px;color:#e9bd64}.subtitle{color:#9ba5bb;font-size:12px}.arena{position:relative;border:1px solid #9e7b443d;border-radius:14px;overflow:hidden;background:#101626;box-shadow:0 15px 55px #0008}.hud{position:absolute;z-index:2;top:14px;left:16px;right:16px;display:grid;grid-template-columns:1fr 1fr;gap:25px;pointer-events:none}.fighter-name{font:700 11px Orbitron;margin-bottom:7px;text-shadow:0 2px 5px #000}.health{height:13px;background:#252b3b;border:1px solid #ffffff55;border-radius:20px;overflow:hidden}.health span{display:block;height:100%;width:100%;background:linear-gradient(90deg,#2dd69a,#a6e86b);transition:width .2s}.enemy-hud{text-align:right}.enemy-hud .health span{margin-left:auto;background:linear-gradient(90deg,#e9a34b,#ed5266)}#arenaCanvas{display:block;width:100%;height:min(66vw,570px);min-height:350px;touch-action:none}.overlay{position:absolute;inset:0;z-index:3;display:grid;place-items:center;background:#050812a8;text-align:center;padding:20px}.overlay.hidden{display:none}.overlay-card{max-width:450px;background:#111827eF;border:1px solid #d6ad5a66;border-radius:14px;padding:25px}.overlay h2{font:800 26px Orbitron;color:#f2c66d;margin:0 0 10px}.overlay p{font-size:12px;color:#c2cad8;line-height:1.7}.btn{border:0;border-radius:8px;padding:12px 18px;background:linear-gradient(100deg,#9a6b2c,#e7bf69);color:#17110a;font:800 10px Orbitron;cursor:pointer;margin:5px}.controls{display:flex;justify-content:space-between;align-items:center;gap:15px;padding:15px;background:#111725;border:1px solid #ffffff16;border-radius:0 0 13px 13px}.keys{color:#aab4c8;font-size:11px;line-height:1.8}.keys b{color:#f1cc7a}.touch{display:flex;gap:8px}.touch button{width:48px;height:45px;border:1px solid #526d9d;border-radius:8px;background:#202d45;color:white;font-size:18px;touch-action:none}.status{text-align:center;color:#d2d9e7;font-size:12px;margin:14px}.disclaimer{font-size:10px;color:#768198;text-align:center;margin:15px}
+@media(max-width:650px){.heading{display:block}.hud{gap:12px}.fighter-name{font-size:9px}.controls{align-items:flex-start;flex-direction:column}.touch{align-self:center}.keys{font-size:10px}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script defer src="mr-raynix.js"></script>
+</head>
+<body>
+<header class="top"><div class="brand">RAYNIX <b>GAMING HUB</b></div><a href="index.html">← BACK TO GAME HUB</a></header>
+<main class="wrap">
+  <div class="heading"><div><div class="eyebrow">RAYNIX ORIGINAL • 3D BROWSER FIGHTER</div><h1>MR RAYNIX</h1><div class="subtitle">THE FIRST ARENA • PLAYER VS AI</div></div><button class="btn" id="restartTop">RESTART MATCH</button></div>
+  <section class="arena">
+    <div class="hud">
+      <div><div class="fighter-name">MR RAYNIX — PLAYER</div><div class="health"><span id="playerHealth"></span></div></div>
+      <div class="enemy-hud"><div class="fighter-name">ARENA GUARD — CPU</div><div class="health"><span id="enemyHealth"></span></div></div>
+    </div>
+    <div id="arenaCanvas"></div>
+    <div class="overlay" id="startOverlay"><div class="overlay-card"><h2>ENTER THE ARENA</h2><p>Face the Arena Guard in this early 3D fighting prototype. Move, block and strike to win the round.</p><button class="btn" id="startBtn">START FIGHT</button></div></div>
+    <div class="overlay hidden" id="endOverlay"><div class="overlay-card"><h2 id="endTitle">ROUND OVER</h2><p id="endText">Match complete.</p><button class="btn" id="againBtn">FIGHT AGAIN</button><a class="btn" href="index.html" style="display:inline-block;text-decoration:none">GAME HUB</a></div></div>
+  </section>
+  <div class="controls"><div class="keys"><b>KEYBOARD</b><br>W / S = move forward / back · A / D = move left / right<br>J = punch · K = kick · L = block</div><div class="touch"><button data-key="a">◀</button><button data-key="w">▲</button><button data-key="s">▼</button><button data-key="d">▶</button><button data-key="j">✊</button><button data-key="k">🦶</button><button data-key="l">🛡</button></div></div>
+  <div class="status" id="status">Press START FIGHT to begin.</div>
+  <p class="disclaimer">Prototype note: this is an original starter arena. Advanced character models, animations, sound, story missions and additional arenas can be added in later development.</p>
+</main>
+</body>
+</html>
