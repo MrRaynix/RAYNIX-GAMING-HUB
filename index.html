@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080d19">
+  <title>RAYNIX GAMING HUB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">R</span><span>RAYNIX <b>GAMING HUB</b></span></a>
+    <nav><a href="#library">Games</a><a href="#about">About</a></nav>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">PLAY • COMPETE • LEVEL UP</p>
+        <h1>Your next<br><span>gaming adventure.</span></h1>
+        <p class="hero-desc">A growing collection of quick arcade, puzzle, strategy and action games.</p>
+        <a class="primary-btn" href="#library">Explore games <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-core">RX</div><span class="float-chip chip-a">10 GAMES</span><span class="float-chip chip-b">LEVEL UP</span></div>
+    </section>
+    <section id="library" class="library-section">
+      <div class="section-heading"><div><p class="eyebrow">THE ARCADE</p><h2>Game library</h2></div><span id="game-count" class="count-pill">10 GAMES</span></div>
+      <div class="toolbar"><input id="search" type="search" placeholder="Search games..." aria-label="Search games"><div id="filters" class="filters"></div></div>
+      <div id="game-grid" class="game-grid"><div class="loading">Loading games…</div></div>
+    </section>
+    <section id="about" class="about"><p class="eyebrow">BUILT FOR PLAYERS</p><h2>One hub. Many challenges.</h2><p>New games can be added to the library in future updates. Play on desktop or mobile.</p></section>
+  </main>
+  <footer>© <span id="year"></span> RAYNIX GAMING HUB <span>Made to play.</span></footer>
+  <script src="games.js"></script><script src="script.js"></script>
+</body>
+</html>
